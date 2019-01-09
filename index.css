@@ -26,6 +26,61 @@
     display: none;
 }
 
+label[for='settings-open']
+{
+    height: 20px;
+    align-self: center;
+}
+
+.header
+{
+    grid-template-columns: 80% 5% 5% 10%;
+    grid-template-rows: 40px;
+    display: grid;
+}
+
+.header__city
+{
+    position: relative;
+}
+
+.header__city-name
+{
+    position: absolute;
+    left: 20px;
+    color: rgb(146, 147, 148);
+}
+
+.header__city-icon
+{
+    position: absolute;
+    left: 0;
+    background: url('img/nav-grey.png') no-repeat;
+}
+
+.header__city-name:hover ~ .header__city-icon
+{
+    background: url('img/nav-red.png') no-repeat;
+}
+
+.header__city,
+.header__bookmark,
+.header__notifications
+{
+    display: inline-flex;
+    align-items: center;
+}
+
+.header__city-icon,
+.header__bookmark-img,
+.header__notifications-img,
+.mail-img
+{
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+
 .header__settings-list
 {
     position: absolute;
@@ -35,15 +90,15 @@
     border: 1px solid rgb(0, 0, 0);
 }
 
-input[id='settings-open']:not(:checked) ~ .header__settings-list
-{
-    display: none;
-}
-
 .header__settings-list .settings-label
 {
     margin: 5px;
     display: block;
+}
+
+input[id='settings-open']:not(:checked) ~ .header__settings-list
+{
+    display: none;
 }
 
 /* stylelint-disable max-line-length */
@@ -97,61 +152,6 @@ input[id='poster']:not(:checked) ~ .header .header__settings-list label[for='pos
 }
 
 /* stylelint-enable max-line-length */
-
-.header
-{
-    grid-template-columns: 80% 5% 5% 10%;
-    grid-template-rows: 40px;
-    display: grid;
-}
-
-.header__city
-{
-    position: relative;
-}
-
-.header__city-name
-{
-    position: absolute;
-    left: 20px;
-    color: rgb(146, 147, 148);
-}
-
-.header__city-icon
-{
-    position: absolute;
-    left: 0;
-    background: url('img/nav-grey.png') no-repeat;
-}
-
-.header__city-name:hover ~ .header__city-icon
-{
-    background: url('img/nav-red.png') no-repeat;
-}
-
-.header .header__city,
-.header .header__bookmark,
-.header .header__notifications
-{
-    display: inline-flex;
-    align-items: center;
-}
-
-.header__bookmark-img,
-.header__notifications-img,
-.mail-img,
-.header__city-icon
-{
-    width: 20px;
-    height: 20px;
-    cursor: pointer;
-}
-
-label[for='settings-open']
-{
-    height: 20px;
-    align-self: center;
-}
 
 .wrap
 {
@@ -284,6 +284,33 @@ label[for='settings-open']
     box-sizing: border-box;
 }
 
+.find-row__button
+{
+    cursor: pointer;
+    position: relative;
+}
+
+.find-row-button__title
+{
+    display: table-cell;
+    background: rgb(255, 219, 77);
+    text-align: center;
+    vertical-align: middle;
+    height: 30px;
+    width: 70px;
+}
+
+.find-row-button__arrow
+{
+    background: url('img/play.png') no-repeat;
+    background-size: 16px 30px;
+    height: 30px;
+    width: 16px;
+    position: absolute;
+    right: -14px;
+    top: 0;
+}
+
 .find__input
 {
     width: 100%;
@@ -317,33 +344,6 @@ label[for='settings-open']
 .keyboard
 {
     right: 5px;
-}
-
-.find-row__button
-{
-    cursor: pointer;
-    position: relative;
-}
-
-.find-row-button__title
-{
-    display: table-cell;
-    background: rgb(255, 219, 77);
-    text-align: center;
-    vertical-align: middle;
-    height: 30px;
-    width: 70px;
-}
-
-.find-row-button__arrow
-{
-    background: url('img/play.png') no-repeat;
-    background-size: 16px 30px;
-    height: 30px;
-    width: 16px;
-    position: absolute;
-    right: -14px;
-    top: 0;
 }
 
 .advert
@@ -477,21 +477,19 @@ label[for='settings-open']
 .header__city-name:hover,
 .mail__text:hover,
 label[for='settings-open']:hover,
+.settings-label:hover,
 .now-smi__item:hover,
+.now-smi .subtitle:hover,
 .now-smi__curs-type:hover,
 .services__item:hover,
 .weather__item-text:hover,
 .poster__content-item-text:hover,
+.poster__content-item-concert:hover,
 .traffic__item-text:hover,
 .map-ekb__content-text:hover,
 .attended__content-item-text:hover,
 .tv__content-item-film:hover,
-.name:hover,
-.poster__content-item-concert:hover,
-.settings-label:hover,
 .tv__content-item-channel:hover,
-.example:hover,
-.now-smi .subtitle:hover,
 .anecdotes__category-type:hover,
 .find-all-row__example:hover
 {
@@ -596,15 +594,6 @@ label[for='settings-open']:hover,
     display: block;
 }
 
-input[id='anecdote-1']:checked ~ .anecdotes__item.a2,
-input[id='anecdote-2']:checked ~ .anecdotes__item.a3,
-input[id='anecdote-3']:checked ~ .anecdotes__item.a4,
-input[id='anecdote-4']:checked ~ .anecdotes__item.a5,
-input[id='anecdote-5']:checked ~ .anecdotes__item.a1
-{
-    left: 0;
-}
-
 .anecdotes__more
 {
     margin: 0;
@@ -614,4 +603,13 @@ input[id='anecdote-5']:checked ~ .anecdotes__item.a1
 .anecdotes__more:before
 {
     content: url('img/reload.png');
+}
+
+input[id='anecdote-1']:checked ~ .anecdotes__item.a2,
+input[id='anecdote-2']:checked ~ .anecdotes__item.a3,
+input[id='anecdote-3']:checked ~ .anecdotes__item.a4,
+input[id='anecdote-4']:checked ~ .anecdotes__item.a5,
+input[id='anecdote-5']:checked ~ .anecdotes__item.a1
+{
+    left: 0;
 }
