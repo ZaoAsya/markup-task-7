@@ -336,12 +336,12 @@ input[id='poster']:not(:checked) ~ .header .header__settings-list label[for='pos
     cursor: pointer;
 }
 
-.microphone
+.find__img.find__img-microphone
 {
     right: 25px;
 }
 
-.keyboard
+.find__img.find__img-keyboard
 {
     right: 5px;
 }
